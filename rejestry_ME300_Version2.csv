@@ -1,0 +1,71 @@
+S³owa steruj¹ce;;
+Adres (hex);Funkcja;
+2000;Bit 1~0;00: Brak funkcji
+;;01: STOP
+;;10: RUN
+;;11: JOG+RUN
+;Bit 3~2;Zarezerwowano
+;Bit 5~4;00: Brak funkcji
+;;01: FWD
+;;10: REV
+;;11: Zmiana kierunku
+2000;Bit 7~6;00: Wybór 1. zestawu czasów przyspieszania/zwalniania
+;;01: Wybór 2. zestawu czasów przyspieszania/zwalniania
+;;10: Wybór 3. zestawu czasów przyspieszania/zwalniania
+;;11: Wybór 4. zestawu czasów przyspieszania/zwalniania
+;Bit 11~8;0000: Wybór g³ównej czêstotliwoœci
+;;0001: Wybór 1. czêstotliwoœci
+;;0010: Wybór 2. czêstotliwoœci
+;;0011: Wybór 3. Czêstotliwoœci
+;;0100: Wybór 4. czêstotliwoœci
+;;0101: Wybór 5. czêstotliwoœci
+;;0110: Wybór 6. czêstotliwoœci
+;;0111: Wybór 7. Czêstotliwoœci
+;;1000: Wybór 8. czêstotliwoœci
+;;1001: Wybór 9. czêstotliwoœci
+;;1010: Wybór 10. czêstotliwoœci
+;;1011: Wybór 11. Czêstotliwoœci
+;;1100: Wybór 12. czêstotliwoœci
+;;1101: Wybór 13. czêstotliwoœci
+;;1110: Wybór 14. czêstotliwoœci
+;;1111: Wybór 15. czêstotliwoœci
+;Bit 12;1: Za³¹czenie funkcji z bitów 11~6
+;Bit 14~13;00: Brak funkcji
+;;01: Sterowanie przez panel
+;;10: Sterowanie zgodnie z parametrem 00-21
+;;11: Zmiana sterowania
+;Bit 15;Zarezerwowano
+2001;;Czêstotliwoœæ zadana z dok³adnoœci¹ do 0,01 Hz
+2002;Bit 0;1: Awaria (EF)
+;Bit 1;1: Reset awarii
+;Bit 2;1: Za³¹czenie stanu bazowego (Base Block)
+;Bit 15~3;Zarezerwowano
+;;
+Podstawowe s³owa statusu (tylko do odczytu);;
+;;
+Adres (hex);Funkcja;
+2100;Bit 15~8;Kod ostrze¿enia
+;Bit 7~0;Kod b³êdu
+2101;Bit 1~0;Stan napêdu
+;;00: Zatrzymany
+;;01: Hamowanie
+;;10: Oczekiwanie (standby)
+;;11: Praca
+;Bit 2;1: JOG
+;Bit 4~3;Kierunek
+;;00: FWD
+;;01: REV->FWD
+;;10: REV
+;;11: FWD->REV
+;Bit 7~5;Zarezerwowano
+;Bit 8;1: Czêstotliwoœæ zadawana przez komunikacjê
+;Bit 9;1: Czêstotliwoœæ zadawana przez sygna³ analogowy
+;Bit 10;1: Sterowanie przez komunikacjê
+;Bit 11;1: Blokada parametrów
+;Bit 12;1: Zezwolenie na zgrywanie parametrów z panelu
+;Bit 15~13;Zarezerwowano
+2102;;Czêstotliwoœæ zadana (0,01 Hz)
+2103;;Czêstotliwoœæ wyjœciowa (0,01 Hz)
+2104;;Pr¹d wyjœciowy. Je¿eli nie jest wiêkszy ni¿ 655,35 A to dok³adnoœæ wynosi 0,01A. Je¿eli pr¹d jest wiêkszy to dok³adnoœæ wynosi 0,1 A.
+2105;;Napiêcie szyny DC (0,1 V)
+2106;;Napiêcie wyjœciowe (0,1 V)
